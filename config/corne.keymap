@@ -58,7 +58,7 @@
 // |      |     |     |     |     |     |   |     |  L1 |     |     |     |      |
 //                    |     | L0  |     |   |     |     |     |
                         bindings = <
-   &trans &trans &trans &trans &trans &trans   &trans &trans &trans &to 3  &to 0  &trans
+   &trans &trans &trans &trans &trans &trans   &trans &trans &trans &to 2  &to 0  &trans
    &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
    &trans &trans &trans &trans &trans &trans   &trans &to 1  &trans &trans &trans &trans
                          &trans &to 0 &trans   &trans &trans &trans
