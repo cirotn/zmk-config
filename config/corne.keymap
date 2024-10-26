@@ -29,7 +29,7 @@
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
                 bindings
-                    , <&macro_press &kp LCTRL>
+                    = <&macro_press &kp LCTRL>
                     , <&macro_tap &kp R>
                     , <&macro_release &kp LCTRL>
                     , <&macro_tap &kp N0>
@@ -39,7 +39,7 @@
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
                 bindings
-                    , <&macro_press &kp LCTRL>
+                    = <&macro_press &kp LCTRL>
                     , <&macro_tap &kp T>
                     , <&macro_release &kp LCTRL>
                     , <&macro_tap &kp RBKT>
@@ -60,7 +60,7 @@
    &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
    &sk LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp RET
    &sk LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &sk RSHFT
-                    &kp LBKT &kp ESC &sl 1   &sl 1 &kp SPACE &sk RALT
+                   &kp LMETA &kp ESC &sl 1   &sl 1 &kp SPACE &sk RALT
                         >;
                 };
                 numpad_layer {
