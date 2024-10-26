@@ -42,7 +42,7 @@
                     = <&macro_press &kp LCTRL>
                     , <&macro_tap &kp T>
                     , <&macro_release &kp LCTRL>
-                    , <&macro_tap &kp RBKT>
+                    , <&macro_tap &kp LBKT>
                     , <&macro_tap &kp N0>
                     ;
             };
