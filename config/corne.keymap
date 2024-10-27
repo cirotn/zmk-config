@@ -110,7 +110,7 @@
    &trans &trans &trans &trans &trans &tmux_scrll   &trans &trans &trans &trans &c_r_0 &trans
    &trans &trans &trans &trans &trans &trans        &trans &trans &trans &trans &trans &trans
    &trans &trans &trans &trans &c_s_v &trans        &trans &trans &trans &trans &trans &trans
-                         &trans &to 0 &trans        &trans &trans &LRM_L
+                         &trans &to 0 &trans        &trans &trans &tog LRM_L
                         >;
                 };
                 bt_layer {
