@@ -102,13 +102,13 @@
                 };
                 macro_layer {
 // -----------------------------------------------------------------------------------------
-// |      |     |     |     |       | tmux scrll |   |     |     |      |     | C-R-0 |      |
-// |      |     |     |     |       |            |   |     |     |      |     |       |      |
-// |      |     |     |     | C-S-V |            |   |     |     |      |     |       |      |
-//                    |     | LR0   |            |   |     |     | LOCK |
+// |      |     |            |     |       | LRT |   |     |     |      |     | C-R-0 |      |
+// |      |     | tmux scrll |     |       |     |   |     |     |      |     |       |      |
+// |      |     |            |     | C-S-V |     |   |     |     |      |     |       |      |
+//                           |     | LR0   |     |   |     |     | LOCK |
                         bindings = <
-   &trans &trans &trans &trans &trans &tmux_scrll   &trans &trans &trans &trans &c_r_0 &trans
-   &trans &trans &trans &trans &trans &trans        &trans &trans &trans &trans &trans &trans
+   &trans &trans &trans &trans &trans &to LRT       &trans &trans &trans &trans &c_r_0 &trans
+   &trans &trans &tmux_scrll &trans &trans &trans   &trans &trans &trans &trans &trans &trans
    &trans &trans &trans &trans &c_s_v &trans        &trans &trans &trans &trans &trans &trans
                          &trans &to 0 &trans        &trans &trans &tog LRM_L
                         >;
