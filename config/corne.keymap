@@ -59,6 +59,16 @@
                     , <&macro_tap &kp N0>
                     ;
             };
+            bash_edit: bash_edit {
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings
+                    = <&macro_press &kp LCTRL>
+                    , <&macro_tap &kp X>
+                    , <&macro_release &kp LCTRL>
+                    , <&macro_tap &kp E>
+                    ;
+            };
             tmux_scrll: tmux_scrll {
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
@@ -89,15 +99,15 @@
                 };
                 numpad_layer {
 // -----------------------------------------------------------------------------------------
-// |      |  `  |      |  [   |  ]   | LRT |   |  /  |  7  |  8  |  9  |  0  |      |
+// |      |  `  |  _   |  [   |  ]   | LRT |   |  /  |  7  |  8  |  9  |  0  |      |
 // |      |  Z  | LFT  | UP   | DWN  | RGT |   |  -  |  4  |  5  |  6  |  '  |      |
 // |      |     | HOME | PGUP | PGDN | END |   |  =  |  1  |  2  |  3  |  \  |      |
 //                     |      | LR0  |     |   | LRM |     |     |
                         bindings = <
-   &trans &kp GRAVE &trans   &kp LBKT &kp RBKT &to LRT     &kp FSLH  &kp N7 &kp N8 &kp N9 &kp N0   &trans
-   &trans &kp Z     &kp LEFT &kp UP   &kp DOWN &kp RIGHT   &kp MINUS &kp N4 &kp N5 &kp N6 &kp SQT  &trans
-   &trans &trans    &kp HOME &kp PGUP &kp PGDN &kp END     &kp EQUAL &kp N1 &kp N2 &kp N3 &kp BSLH &trans
-                                     &trans &to 0 &trans   &sl LRM_T &trans &trans
+   &trans &kp GRAVE &kp UNDER &kp LBKT &kp RBKT &to LRT     &kp FSLH  &kp N7 &kp N8 &kp N9 &kp N0   &trans
+   &trans &kp Z     &kp LEFT  &kp UP   &kp DOWN &kp RIGHT   &kp MINUS &kp N4 &kp N5 &kp N6 &kp SQT  &trans
+   &trans &trans    &kp HOME  &kp PGUP &kp PGDN &kp END     &kp EQUAL &kp N1 &kp N2 &kp N3 &kp BSLH &trans
+                                      &trans &to 0 &trans   &sl LRM_T &trans &trans
                         >;
                 };
                 macro_layer {
@@ -107,10 +117,10 @@
 // |      |     |            |     | C-S-V |     |   |     |     |     |     |       |      |
 //                           |     | LR0   |     |   |     |     |     |
                         bindings = <
-   &trans &trans &trans &trans &trans &to LRT       &trans &trans &trans &trans &c_r_0 &trans
-   &trans &trans &tmux_scrll &trans &trans &trans   &trans &trans &trans &trans &trans &trans
-   &trans &trans &trans &trans &c_s_v &trans        &trans &trans &trans &trans &trans &trans
-                         &trans &to 0 &trans        &trans &trans &trans
+   &trans &trans &bash_edit  &trans &trans &to LRT   &trans &trans &trans &trans &c_r_0 &trans
+   &trans &trans &tmux_scrll &trans &trans &trans    &trans &trans &trans &trans &trans &trans
+   &trans &trans &trans      &trans &c_s_v &trans    &trans &trans &trans &trans &trans &trans
+                               &trans &to 0 &trans  &trans &trans &trans
                         >;
                 };
                 bt_layer {
