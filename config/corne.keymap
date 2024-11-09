@@ -100,13 +100,13 @@
                 numpad_layer {
 // -----------------------------------------------------------------------------------------
 // |      |  `  |  _   |  [   |  ]   | LRT |   |  /  |  7  |  8  |  9  |  0  |      |
-// |      |  Z  | LFT  | UP   | DWN  | RGT |   |  -  |  4  |  5  |  6  |  '  |      |
-// |      |     | HOME | PGUP | PGDN | END |   |  =  |  1  |  2  |  3  |  \  |      |
+// |      |  Z  | LFT  | DWN  | UP   | RGT |   |  -  |  4  |  5  |  6  |  '  |      |
+// |      |     | HOME | PGDN | PGUP | END |   |  =  |  1  |  2  |  3  |  \  |      |
 //                     |      | LR0  |     |   | LRM |     |     |
                         bindings = <
    &trans &kp GRAVE &kp UNDER &kp LBKT &kp RBKT &to LRT     &kp FSLH  &kp N7 &kp N8 &kp N9 &kp N0   &trans
-   &trans &kp Z     &kp LEFT  &kp UP   &kp DOWN &kp RIGHT   &kp MINUS &kp N4 &kp N5 &kp N6 &kp SQT  &trans
-   &trans &trans    &kp HOME  &kp PGUP &kp PGDN &kp END     &kp EQUAL &kp N1 &kp N2 &kp N3 &kp BSLH &trans
+   &trans &kp Z     &kp LEFT  &kp DOWN &kp UP   &kp RIGHT   &kp MINUS &kp N4 &kp N5 &kp N6 &kp SQT  &trans
+   &trans &trans    &kp HOME  &kp PGDN &kp PGUP &kp END     &kp EQUAL &kp N1 &kp N2 &kp N3 &kp BSLH &trans
                                       &trans &to 0 &trans   &sl LRM_T &trans &trans
                         >;
                 };
