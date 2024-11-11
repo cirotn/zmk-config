@@ -39,17 +39,6 @@
                 };
         };
         macros {
-            c_s_v: c_s_v {
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings
-                    = <&macro_press &kp LSHFT>
-                    , <&macro_press &kp LCTRL>
-                    , <&macro_tap &kp V>
-                    , <&macro_release &kp LCTRL>
-                    , <&macro_release &kp LSHFT>
-                    ;
-            };
             c_r_0: c_r_0 {
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
@@ -64,10 +53,8 @@
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
                 bindings
-                    = <&macro_press &kp LCTRL>
-                    , <&macro_tap &kp X>
-                    , <&macro_release &kp LCTRL>
-                    , <&macro_tap &kp E>
+                    = <&macro_press &kp LC(X)>
+                    , <&macro_tap &kp LC(E)>
                     ;
             };
             tmux_scrll: tmux_scrll {
@@ -113,14 +100,14 @@
                 };
                 macro_layer {
 // -----------------------------------------------------------------------------------------
-// |      |     | Alt+F4     | bash edit |       | LRT |   |          |     |         |           | C-R-0 |      |
-// |      |     | tmux scrll |           |       |     |   |          |     |         |           |       |      |
-// |      |     |            |           | C-S-V |     |   | M-S-Left | M-H | Alt+F10 | M-S-Right |       |      |
-//                           |           | LR0   |     |   |          |     |         |
+// |      | Alt+F4 |            | bash edit |       | LRT |   |          |     |         |           | C-R-0 |      |
+// |      |        | tmux scrll |           |       |     |   |          |     |         |           |       |      |
+// |      |        |            |           | C-S-V |     |   | M-S-Left | M-H | Alt+F10 | M-S-Right |       |      |
+//                              |           | LR0   |     |   |          |     |         |
                         bindings = <
-   &trans &trans &kp LA(F4)  &bash_edit &trans        &to LRT   &trans           &trans    &trans      &trans            &c_r_0 &trans
-   &trans &trans &tmux_scrll &trans     &trans        &trans    &kp LG(LS(LEFT)) &kp LG(H) &kp LA(F10) &kp LG(LS(RIGHT)) &trans &trans
-   &trans &trans &trans      &trans     &kp LC(LS(V)) &trans    &trans           &trans    &trans      &trans            &trans &trans
+   &trans &kp LA(F4) &kp LA(F4)  &bash_edit &trans        &to LRT   &trans           &trans    &trans      &trans            &c_r_0 &trans
+   &trans &trans     &tmux_scrll &trans     &trans        &trans    &kp LG(LS(LEFT)) &kp LG(H) &kp LA(F10) &kp LG(LS(RIGHT)) &trans &trans
+   &trans &trans     &trans      &trans     &kp LC(LS(V)) &trans    &trans           &trans    &trans      &trans            &trans &trans
                                           &trans &to 0 &trans   &trans &trans &trans
                         >;
                 };
