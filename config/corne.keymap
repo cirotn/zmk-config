@@ -16,6 +16,7 @@
 #define LRN_L 6
 #define LRM_T 7
 #define LRM_L 8
+#define LRF   9
 
 / {
         conditional_layers {
@@ -112,15 +113,15 @@
                 };
                 macro_layer {
 // -----------------------------------------------------------------------------------------
-// |      |     |            |     |       | LRT |   |     |     |     |     | C-R-0 |      |
-// |      |     | tmux scrll |     |       |     |   |     |     |     |     |       |      |
-// |      |     |            |     | C-S-V |     |   |     |     |     |     |       |      |
-//                           |     | LR0   |     |   |     |     |     |
+// |      |     | Alt+F4     | bash edit |       | LRT |   |          |     |         |           | C-R-0 |      |
+// |      |     | tmux scrll |           |       |     |   |          |     |         |           |       |      |
+// |      |     |            |           | C-S-V |     |   | M-S-Left | M-H | Alt+F10 | M-S-Right |       |      |
+//                           |           | LR0   |     |   |          |     |         |
                         bindings = <
-   &trans &trans &bash_edit  &trans &trans &to LRT   &trans &trans &trans &trans &c_r_0 &trans
-   &trans &trans &tmux_scrll &trans &trans &trans    &trans &trans &trans &trans &trans &trans
-   &trans &trans &trans      &trans &c_s_v &trans    &trans &trans &trans &trans &trans &trans
-                               &trans &to 0 &trans  &trans &trans &trans
+   &trans &trans &kp LA(F4)  &bash_edit &trans        &to LRT   &trans           &trans    &trans      &trans            &c_r_0 &trans
+   &trans &trans &tmux_scrll &trans     &trans        &trans    &kp LG(LS(LEFT)) &kp LG(H) &kp LA(F10) &kp LG(LS(RIGHT)) &trans &trans
+   &trans &trans &trans      &trans     &kp LC(LS(V)) &trans    &trans           &trans    &trans      &trans            &trans &trans
+                                          &trans &to 0 &trans   &trans &trans &trans
                         >;
                 };
                 bt_layer {
@@ -140,12 +141,12 @@
 // -----------------------------------------------------------------------------------------
 // |      |     |     |     |     |     |   |     |     |     | LRBT | LR0 |      |
 // |      |     |     |     |     |     |   |     |     |     |      |     |      |
-// |      |     |     |     |     |     |   |     | LR1 | LRM |      |     |      |
+// |      |     |     |     |     |     |   |     | LR1 | LRM | LRF  |     |      |
 //                    |     | LR0 |     |   |     |     |     |
                         bindings = <
    &trans &trans &trans &trans &trans &trans   &trans &trans &trans  &to LRBT  &to 0  &trans
    &trans &trans &trans &trans &trans &trans   &trans &trans &trans  &trans    &trans &trans
-   &trans &trans &trans &trans &trans &trans   &trans &to 1  &to LRM &trans    &trans &trans
+   &trans &trans &trans &trans &trans &trans   &trans &to 1  &to LRM &to LRF   &trans &trans
                          &trans &to 0 &trans   &trans &trans &trans
                         >;
                 };
@@ -177,7 +178,6 @@
 // |      |     |     |     |     |     |   |      |     |     |     |     |      |
 // |      |     |     |     |     |     |   |      |     |     |     |     |      |
 //                    |     |     |     |   | LOCK |     |     |
-// Empty layer
                         bindings = <
    &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
    &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
@@ -192,6 +192,20 @@
    &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
    &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
                         &trans &trans &trans   &trans &trans &trans
+                        >;
+                };
+                f_keys_layer {
+// -----------------------------------------------------------------------------------------
+// |      |     |     |     |     |     |   |      | F7  | F8  | F9  | F10 |      |
+// |      |     |     |     |     |     |   |      | F4  | F5  | F6  | F11 |      |
+// |      |     |     |     |     |     |   |      | F1  | F2  | F3  | F12 |      |
+//                    |     | LR0 |     |   |      |     |     |
+// Empty layer
+                        bindings = <
+   &trans &trans &trans &trans &trans &trans   &trans &kp F7 &kp F8 &kp F9 &kp F10 &trans
+   &trans &trans &trans &trans &trans &trans   &trans &kp F4 &kp F5 &kp F6 &kp F11 &trans
+   &trans &trans &trans &trans &trans &trans   &trans &kp F1 &kp F2 &kp F3 &kp F12 &trans
+                        &trans &to 0  &trans   &trans &trans &trans
                         >;
                 };
         };
