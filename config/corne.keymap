@@ -18,6 +18,10 @@
 #define LRM_L 8
 #define LRF   9
 
+&sk {
+    release-after-ms = <3000>;
+};
+
 / {
         conditional_layers {
                 compatible = "zmk,conditional-layers";
